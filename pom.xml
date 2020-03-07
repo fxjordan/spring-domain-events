@@ -29,6 +29,12 @@
 		<module>spring-domain-events-mongodb</module>
 	</modules>
 
+    <scm>
+	    <url>https://github.com/fxjordan/spring-domain-events</url>
+	    <connection>scm:git:git@github.com:fxjordan/spring-domain-events.git</connection>
+	    <developerConnection>scm:git:git@github.com:fxjordan/spring-domain-events.git</developerConnection>
+	</scm>
+
 	<build>
 		<plugins>
 
@@ -143,5 +149,16 @@
 		</dependency>
 
 	</dependencies>
+	
+	<distributionManagement>
+        <repository>
+            <id>buddyMavenRepoWrite</id>
+            <url>${buddyMavenRepoWriteUrl}</url>
+        </repository>
+        <snapshotRepository>
+            <id>buddyMavenRepoWrite</id>
+            <url>${buddyMavenRepoWriteUrl}</url>
+        </snapshotRepository>
+    </distributionManagement>
 
 </project>
