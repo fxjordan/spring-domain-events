@@ -13,3 +13,5 @@ cache:
 deploy:
   provider: script
   script: mvn deploy --settings .travis/settings.xml -DskipTests=true --batch-mode --update-snapshots -Prelease
+  on:
+    branch: master
