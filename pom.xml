@@ -29,10 +29,10 @@
 		<module>spring-domain-events-mongodb</module>
 	</modules>
 
-    <scm>
-	    <url>https://github.com/fxjordan/spring-domain-events</url>
-	    <connection>scm:git:git@github.com:fxjordan/spring-domain-events.git</connection>
-	    <developerConnection>scm:git:git@github.com:fxjordan/spring-domain-events.git</developerConnection>
+	<scm>
+		<url>https://github.com/fxjordan/spring-domain-events</url>
+		<connection>scm:git:git@github.com:fxjordan/spring-domain-events.git</connection>
+		<developerConnection>scm:git:git@github.com:fxjordan/spring-domain-events.git</developerConnection>
 	</scm>
 
 	<build>
@@ -51,6 +51,19 @@
 			<plugin>
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>2.22.2</version>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 
 		</plugins>
@@ -111,7 +124,7 @@
 			<artifactId>junit-jupiter-engine</artifactId>
 			<scope>test</scope>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.mockito</groupId>
 			<artifactId>mockito-junit-jupiter</artifactId>
@@ -149,16 +162,16 @@
 		</dependency>
 
 	</dependencies>
-	
+
 	<distributionManagement>
-        <repository>
-            <id>buddyMavenRepoWrite</id>
-            <url>${buddyMavenRepoWriteUrl}</url>
-        </repository>
-        <snapshotRepository>
-            <id>buddyMavenRepoWrite</id>
-            <url>${buddyMavenRepoWriteUrl}</url>
-        </snapshotRepository>
-    </distributionManagement>
+		<repository>
+			<id>buddyMavenRepoWrite</id>
+			<url>${buddyMavenRepoWriteUrl}</url>
+		</repository>
+		<snapshotRepository>
+			<id>buddyMavenRepoWrite</id>
+			<url>${buddyMavenRepoWriteUrl}</url>
+		</snapshotRepository>
+	</distributionManagement>
 
 </project>
