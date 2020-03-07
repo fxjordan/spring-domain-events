@@ -1,6 +1,9 @@
 = Spring (reliable) Domain Events
 
-image:https://travis-ci.org/olivergierke/spring-domain-events.svg?branch=master["Build Status", link="https://travis-ci.org/olivergierke/spring-domain-events"]
+NOTE: This project is a fork of https://github.com/odrotbohm/spring-domain-events[Oliver Drotbohm's spring-domain-events project] an hopefully we can merge core fixes back to the original. Also we might move the new `mongodb` module to a separate project in the future.
+For now the project will be published only to a private Maven repository of BUDDY Activities.
+
+image:https://travis-ci.com/fxjordan/spring-domain-events.svg?branch=master["Build Status", link="https://travis-ci.com/fxjordan/spring-domain-events"]
 
 == The Problem
 
