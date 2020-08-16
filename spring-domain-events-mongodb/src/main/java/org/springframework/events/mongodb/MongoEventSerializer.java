@@ -17,11 +17,14 @@ package org.springframework.events.mongodb;
 
 import org.springframework.events.EventSerializer;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * @author Felix Jordan
  */
+@Slf4j
 public class MongoEventSerializer implements EventSerializer {
-    
+	
     /*
      * (non-Javadoc)
      * @see de.olivergierke.events.EventSerializer#serialize(java.lang.Object)
@@ -37,10 +40,14 @@ public class MongoEventSerializer implements EventSerializer {
      */
     @Override
     public Object deserialize(Object serialized, Class<?> type) {
-        if (!type.isAssignableFrom(serialized.getClass())) {
-            throw new IllegalArgumentException("Invalid serialized event class: " + serialized.getClass()
-                    + "(expecting: " + type + ")");
-        }
+    	/*
+    	 * TODO Refactor this ! Check is unnecessary, because Spring data
+    	 * will always deserialize into the correct type and will throw if type
+    	 * does not exist.
+    	 */
+    	if (!serialized.getClass().getName().equals(type.getName())) {
+    		log.warn("Serialized event has unexpected type: {}. Expecting: {}", serialized.getClass(), type);
+    	}
         return serialized;
     }
     
